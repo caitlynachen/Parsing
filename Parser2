@@ -1,0 +1,63 @@
+package jrJava.parsing;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class MyParser1 {
+
+
+	public static void main(String[] args) throws Exception {
+
+		FileInputStream fis = new FileInputStream("data.txt");
+		InputStreamReader isr = new InputStreamReader(fis, "US-ASCII");
+		BufferedReader br = new BufferedReader(isr);
+		double count = 0;
+
+		
+		while(true){
+
+			String lines = br.readLine();
+			if(lines==null) break;
+			StringTokenizer st = new StringTokenizer(lines, ", ");
+
+			
+
+			while(st.hasMoreTokens()){
+				String piece1 = st.nextToken();
+				
+				count = count +Double.parseDouble(piece1);;
+				 
+			}
+		}
+
+		br.close();
+		System.out.println(count);
+	}
+		
+}
+
+/*int pos1,pos2;
+
+
+			pos1 = -1;
+			while(true){
+
+			pos2 = aaa.indexOf(' ', pos1+1);
+			if(pos2<0){ 
+				String piece =aaa.substring(pos1+1);
+				System.out.println(piece);
+				break;
+			}
+			String piece = aaa.substring(pos1+1, pos2+1).trim();
+			System.out.println(piece);
+			pos1 = pos2;
+
+		}
+
+	}
+
+}
+ */
