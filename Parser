@@ -1,0 +1,45 @@
+# Parsing
+package jrJava.parsing;
+
+public class MyParser {
+
+	public static void main(String[] args) {
+	
+		String a1 = "abc";
+		String a2 = "def";
+		
+		String a3 = a1.concat(a2);
+		System.out.println(a3);
+	
+		String a4 = "abc".concat("xyz").concat("123");
+		System.out.println(a4);
+		
+		String text = "I am pretty pretty.";
+		System.out.println(text.indexOf('p'));
+		int pos1 = text.indexOf('p');
+		int pos2 = text.indexOf('p', pos1+1);
+		System.out.println(pos2);
+		System.out.println(text.length());
+		System.out.println(text.charAt(0));
+		System.out.println(text.substring(1, 5));
+		
+		String text2 = "   happy   ";
+		System.out.println(text2.trim());
+		
+		String a5 = "abc"+"xyz"+"123";
+		System.out.println(a5);
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("abc");
+		sb.append("xyz");
+		sb.append("123");
+		String sum = sb.toString();
+		System.out.println(sum);
+		System.out.println("abab".replace('a', 'b'));
+		
+	}
+}
+		
+		
+
+		
