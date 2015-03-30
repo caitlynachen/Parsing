@@ -1,0 +1,33 @@
+package jrJava.parsing;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class ParsingSum {
+
+
+	public static void main(String[] args) throws Exception{
+		
+		FileInputStream fis = new FileInputStream("data2.txt");
+		InputStreamReader isr = new InputStreamReader(fis, "US-ASCII");
+		BufferedReader br = new BufferedReader(isr);
+		double sum = 0;
+		
+		while(true){
+			String lines = br.readLine();
+			if(lines==null) break;
+			StringTokenizer st = new StringTokenizer(lines, ", ");
+			
+			while(st.hasMoreTokens()){
+				String piece = st.nextToken();
+				sum = sum + Double.parseDouble(piece);
+			}
+		}
+		
+		br.close();
+		System.out.println(sum);
+	}
+
+}
